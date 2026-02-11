@@ -1,0 +1,19 @@
+{
+  "name": "entregable1_zelayanoeliajudith",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node servidor/src/app.js",
+    "dev": "node --watch servidor/src/index.js",
+    "dev:nodemon": "nodemon servidor/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

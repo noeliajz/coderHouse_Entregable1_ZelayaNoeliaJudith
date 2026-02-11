@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Asus3",
+    "description": "esta es una notebook",
+    "code": "Asus3",
+    "price": 1000000,
+    "status": true,
+    "stock": 23,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
+  },
+  {
+    "id": 200,
+    "title": "Notebook 3 ",
+    "description": "esta es una notebook",
+    "code": "C12",
+    "price": 3000000,
+    "status": true,
+    "stock": 10,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
+  },
+  {
+    "id": 202,
+    "title": "Motorola",
+    "description": "esta es una notebook",
+    "code": "Asus3",
+    "price": 1000000,
+    "status": true,
+    "stock": 23,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
+  }
+]
