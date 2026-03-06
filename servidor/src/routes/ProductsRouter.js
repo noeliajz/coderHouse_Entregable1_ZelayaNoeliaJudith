@@ -19,12 +19,26 @@ router.get('/:pid', async (req, res) => {
   res.json(product);
 });
 
-router.post('/', async (req, res) => {
+/* router.post('/', async (req, res) => {
   const newProduct = await productManager.createProduct(req.body);
   res.status(201).json(newProduct);
+}); */
+
+router.post("/", async (req, res) => {
+
+    const product = req.body;
+
+    await productManager.createProduct(product);
+
+    const products = await productManager.getProducts();
+
+    req.app.get("io").emit("products", products);
+
+    res.send("Se agrego el producto");
+
 });
 
-router.put('/:pid', async (req, res) => {
+/* router.put('/:pid', async (req, res) => {
   const updated = await productManager.updateProduct(
     Number(req.params.pid),
     req.body
@@ -35,11 +49,41 @@ router.put('/:pid', async (req, res) => {
   }
 
   res.json(updated);
+}); */
+
+router.put("/:pid", async (req, res) => {
+
+  const updated = await productManager.updateProduct(
+    Number(req.params.pid),
+    req.body
+  );
+
+  if (!updated) {
+    return res.status(404).json({ error: "No se encontró el producto" });
+  }
+
+  const products = await productManager.getProducts();
+
+  req.app.get("io").emit("products", products);
+
+  res.json(updated);
+
 });
 
-router.delete('/:pid', async (req, res) => {
+/* router.delete('/:pid', async (req, res) => {
   await productManager.deleteProduct(Number(req.params.pid));
   res.json({ msg: 'El producto se ha eliminado' });
 });
+ */
+router.delete("/:pid", async (req, res) => {
 
+  await productManager.deleteProduct(Number(req.params.pid));
+
+  const products = await productManager.getProducts();
+
+  req.app.get("io").emit("products", products);
+
+  res.json({ msg: "Producto eliminado" });
+
+});
 export default router;
