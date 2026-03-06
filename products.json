@@ -37,5 +37,44 @@
     "thumbnails": [
       "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
     ]
+  },
+  {
+    "id": 205,
+    "title": "3",
+    "description": "esta es una notebook",
+    "code": "Asus3",
+    "price": 1000000,
+    "status": true,
+    "stock": 23,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
+  },
+  {
+    "id": 206,
+    "title": "3",
+    "description": "esta es una notebook",
+    "code": "Asus3",
+    "price": 1000000,
+    "status": true,
+    "stock": 23,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
+  },
+  {
+    "id": 208,
+    "title": "cambiado",
+    "description": "esta es una notebook",
+    "code": "Asus3",
+    "price": 1000000,
+    "status": true,
+    "stock": 23,
+    "category": "Informática",
+    "thumbnails": [
+      "https://www.pexels.com/es-es/foto/ordenador-portatil-cuaderno-lugar-de-trabajo-mesa-redonda-6893332/"
+    ]
   }
 ]
