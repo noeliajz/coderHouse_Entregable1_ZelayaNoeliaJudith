@@ -12,16 +12,20 @@ router.get("/", async (req, res) => {
   res.json(products);
 });
 
-/* router.get("/:pid", async (req, res) => {
-  const product = await productManager.getProductById(Number(req.params.pid));
+ router.get("/:pid", async (req, res) => {
+/*   const product = await productManager.getProductById(Number(req.params.pid));
+ */
 
+  const {pid} = req.params
+  const product = await productModel.findById(pid)
   if (!product) {
     return res.status(404).json({ error: "no se ha encontrado el producto " });
   }
 
   res.json(product);
 });
- */
+ 
+
 router.post("/", async (req, res) => {
   const product = req.body;
 
