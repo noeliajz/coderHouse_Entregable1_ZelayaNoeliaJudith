@@ -22,3 +22,8 @@ app.set("views", __dirname + "/views");
 app.use("/", viewsRouter)
 
 export default app;
+/* clave 
+67TYuyYs8ELk8nFd
+username: noeliajudithzelayautnfrt_db_user
+mongodb+srv://noeliajudithzelayautnfrt_db_user:67TYuyYs8ELk8nFd@cluster0.49xpgr5.mongodb.net/?appName=Cluster0
+*/
