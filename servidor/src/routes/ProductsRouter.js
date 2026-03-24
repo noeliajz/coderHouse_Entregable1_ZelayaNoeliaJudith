@@ -6,16 +6,32 @@ const router = Router();
 /* const productManager = new ProductManager("products.json");
  */
 router.get("/", async (req, res) => {
-  /*   const products = await productManager.getProducts();
-   */
-  const products = await productModel.paginate({}, {
-    limit: 10,
-    page: 1, 
-    sort: {price: 1}
-  }
-  );
-  res.json(products);
+    const { page = 1 } = req.query;
+
+    const result = await productModel.paginate({}, {
+        limit: 10,
+        page: page,
+        lean: true
+    });
+    const baseUrl = "http://localhost:8080/api/products";
+    res.json({
+        status: "success",
+        payload: result.docs,
+        totalPages: result.totalPages,
+        prevPage: result.prevPage,
+        nextPage: result.nextPage,
+        page: result.page,
+        hasPrevPage: result.hasPrevPage,
+        hasNextPage: result.hasNextPage,
+        prevLink: result.hasPrevPage 
+            ? `${baseUrl}?page=${result.prevPage}` 
+            : null,
+        nextLink: result.hasNextPage 
+            ? `${baseUrl}?page=${result.nextPage}` 
+            : null
+    });
 });
+
 
  router.get("/:pid", async (req, res) => {
 /*   const product = await productManager.getProductById(Number(req.params.pid));
