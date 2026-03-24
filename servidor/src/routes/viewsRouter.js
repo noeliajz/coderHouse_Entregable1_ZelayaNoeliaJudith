@@ -56,7 +56,14 @@ router.get("/", async (req, res) => {
     page: page,
     lean: true
   });
-  res.render("home", { pagination });
-});
+  res.render("index", { pagination });
+/*   res.render("home", { pagination });
+ */});
 
+
+router.get("/product/:pid", async (req, res) => {
+    const { pid } = req.params;
+    const product = await productModel.findById(pid).lean();
+    res.render("masInfoProducto", { product });
+});
 export default router;
