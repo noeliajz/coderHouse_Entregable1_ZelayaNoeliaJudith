@@ -17,19 +17,14 @@ router.post("/", async (req, res) => {
 });
 
 
-  router.get("/:cid", async (req, res) => {
-
-/*   const cart = await cartManager.getCartById(Number(req.params.cid));
- */
- 
-  const { cid } = req.params;
-  const carrito = await cartModel.findById(cid).populate("products.product");
-  if (!carrito) {
-    return res.status(404).json({ error: "El carrito no se encontro" });
-  }
-  res.json(carrito.products);
+router.get("/:cid", async (req, res) => {
+    const { cid } = req.params;
+    const carrito = await cartModel.findById(cid).lean();
+    if (!carrito) {
+        return res.status(404).json({ error: "Carrito no encontrado" });
+    }
+    res.json(carrito);
 });
- 
 
 router.post("/:cid/product/:pid", async (req, res) => {
   

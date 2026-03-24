@@ -81,7 +81,7 @@ router.put("/:pid", async (req, res) => {
 
   req.app.get("io").emit("products", products);
 
-  res.json(updated);
+  res.json(editado);
 });
 
 router.delete("/:pid", async (req, res) => {
