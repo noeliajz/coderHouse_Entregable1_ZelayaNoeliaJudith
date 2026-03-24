@@ -1,6 +1,6 @@
 <h1>Todos los productos</h1>
 
-{{#each products}}
+{{#each pagination.docs}}
   <h3>{{this.title}}</h3>
   <h4>{{this.description}}</h4>
   <p>{{this.code}}</p>
@@ -8,3 +8,6 @@
   {{#each this.thumbnails}} <img src="{{this}}" /> {{/each}}
 
 {{/each}}
+
+<a href="/tienda?page={{pagination.prevPage}}">{{pagination.prevPage}}</a>
+<a href="/tienda?page={{pagination.nextPage}}">{{pagination.nextPage}}</a>

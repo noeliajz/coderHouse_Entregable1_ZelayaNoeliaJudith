@@ -8,7 +8,12 @@ const router = Router();
 router.get("/", async (req, res) => {
   /*   const products = await productManager.getProducts();
    */
-  const products = await productModel.find({});
+  const products = await productModel.paginate({}, {
+    limit: 10,
+    page: 1, 
+    sort: {price: 1}
+  }
+  );
   res.json(products);
 });
 
