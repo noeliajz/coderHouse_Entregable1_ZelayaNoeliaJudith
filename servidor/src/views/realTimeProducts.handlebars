@@ -4,7 +4,7 @@
 
 <div id="productsList">
 
-{{#each products}}
+{{#each pagination.docs}}
   <h3>{{this.title}}</h3>
   <h4>{{this.description}}</h4>
   <p>{{this.code}}</p>
@@ -17,6 +17,9 @@
 {{/each}}
 
 </div>
+
+<a href="/realtimeproducts?page={{pagination.prevPage}}">{{pagination.prevPage}}</a>
+<a href="/realtimeproducts?page={{pagination.nextPage}}">{{pagination.nextPage}}</a>
 
 <script src="/socket.io/socket.io.js"></script>
 

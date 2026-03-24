@@ -1,10 +1,13 @@
 <h1>Página Principal</h1>
 
-{{#each products}}
-  <h3>{{this.title}}</h3>
-  <h4>{{this.description}}</h4>
-  <p>{{this.code}}</p>
-  <p>{{this.price}}</p>
-  {{#each this.thumbnails}} <img src="{{this}}" /> {{/each}}
+<h1>Nuestros Productos</h1>
 
+{{#each pagination.docs}}
+  <h3>{{this.title}}</h3>
+  <p>{{this.description}}</p>
+  <p>{{this.price}}</p>
 {{/each}}
+
+<a href="/?page={{pagination.prevPage}}">{{pagination.prevPage}}</a>
+<a href="/?page={{pagination.nextPage}}">{{pagination.nextPage}}</a>
+
